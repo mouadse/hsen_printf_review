@@ -9,8 +9,6 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
 
-.SECONDEXPANSION:
-
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
@@ -28,3 +26,5 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+
+.SECONDARY: $(OBJS)
